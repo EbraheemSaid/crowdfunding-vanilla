@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Crowdfunding</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div class="container" style="max-width: 400px; margin-top: 50px">
+      <h2>Welcome Back</h2>
+      <form
+        id="loginForm"
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          margin-top: 20px;
+        "
+      >
+        <input
+          type="email"
+          id="loginEmail"
+          placeholder="Email Address"
+          required
+          style="padding: 10px"
+        />
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Password"
+          required
+          style="padding: 10px"
+        />
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p style="margin-top: 15px; text-align: center">
+        Don't have an account? <a href="register.html">Register here</a>
+      </p>
+    </div>
+
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/login.js"></script>
+  </body>
+</html>

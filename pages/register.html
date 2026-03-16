@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Crowdfunding</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div class="container" style="max-width: 400px; margin-top: 50px">
+      <h2>Create an Account</h2>
+      <form
+        id="registerForm"
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          margin-top: 20px;
+        "
+      >
+        <input
+          type="text"
+          id="name"
+          placeholder="Full Name"
+          required
+          style="padding: 10px"
+        />
+        <input
+          type="email"
+          id="email"
+          placeholder="Email Address"
+          required
+          style="padding: 10px"
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          required
+          style="padding: 10px"
+        />
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <p style="margin-top: 15px; text-align: center">
+        Already have an account? <a href="login.html">Login here</a>
+      </p>
+    </div>
+
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/register.js"></script>
+  </body>
+</html>
