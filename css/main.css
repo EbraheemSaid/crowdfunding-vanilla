@@ -1,0 +1,54 @@
+:root {
+  /* color variables */
+  --primary-color: #02a95c;
+  --primary-dark: #01884a;
+  --bg-color: #fbfbfa;
+  --text-main: #2a2a2a;
+  --text-muted: #656969;
+  --border-color: #e8e8e8;
+  --danger-color: #d93025;
+
+  /* spaceing */
+  --radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --max-width: 1200px;
+}
+
+/* universal selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Basic Button Styling */
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+}

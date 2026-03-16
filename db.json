@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Jane Doe",
+      "role": "user",
+      "isActive": true,
+      "email": "jane@example.com",
+      "password": "hashed_password"
+    },
+    {
+      "id": "2",
+      "name": "Admin Boss",
+      "role": "admin",
+      "isActive": true,
+      "email": "admin@example.com",
+      "password": "admin"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "1",
+      "title": "Smart Watch V2",
+      "description": "The next generation of smart watches.",
+      "creatorId": "1",
+      "goal": 5000,
+      "deadline": "2026-12-31",
+      "isApproved": true,
+      "image": "data:image/png;base64,iVBORw0KGgoAAA..."
+    }
+  ],
+  "pledges": [
+    {
+      "id": "1",
+      "campaignId": "1",
+      "userId": "1",
+      "amount": 100
+    }
+  ]
+}
