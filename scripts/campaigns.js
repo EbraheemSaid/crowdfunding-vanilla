@@ -41,9 +41,9 @@ async function fetchAndRenderCampaigns(searchQuery = "") {
   }
 }
 
-document.getElementById("searchBtn").addEventListener("click", function () {
-  const searchTerm = document.getElementById("searchInput").value.trim();
-  fetchAndRenderCampaigns(searchTerm);
-});
+// document.getElementById("searchBtn").addEventListener("click", function () {
+//   const searchTerm = document.getElementById("searchInput").value.trim();
+//   fetchAndRenderCampaigns(searchTerm);
+// });
 
 fetchAndRenderCampaigns();
