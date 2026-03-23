@@ -1,26 +1,15 @@
-// user-dashboard.js
-
-// 1. Route Protection
 const currentUser = getAuthUser();
 if (!currentUser) {
   window.location.href = "login.html";
 }
 
-// Set up header
-document.getElementById("welcomeMessage").textContent =
-  `Welcome, ${currentUser.name}`;
-document.getElementById("logoutBtn").addEventListener("click", logoutUser); // Uses config.js helper
-
-// DOM Elements
 const campaignsContainer = document.getElementById("myCampaignsContainer");
 const pledgesContainer = document.getElementById("myPledgesContainer");
 const editModal = document.getElementById("editModal");
 const editForm = document.getElementById("editForm");
 
-// 2. Fetch and Render Dashboard Data
 async function loadDashboardData() {
   try {
-    // Fetch User's Campaigns
     const campRes = await fetch(
       `${API_URL}/campaigns?creatorId=${currentUser.id}`,
     );
@@ -48,7 +37,6 @@ async function loadDashboardData() {
       });
     }
 
-    // Fetch User's Pledges using their ID
     const pledgeRes = await fetch(
       `${API_URL}/pledges?userId=${currentUser.id}`,
     );
@@ -77,10 +65,8 @@ async function loadDashboardData() {
   }
 }
 
-// 3. Edit Modal Logic (Event Delegation)
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("edit-btn")) {
-    // Populate the modal inputs with the existing data
     document.getElementById("editCampaignId").value =
       event.target.getAttribute("data-id");
     document.getElementById("editDeadline").value =
@@ -88,23 +74,19 @@ document.addEventListener("click", function (event) {
     document.getElementById("editDescription").value =
       event.target.getAttribute("data-desc");
 
-    // Show the modal
     editModal.style.display = "block";
   }
 });
 
-// Close Modal
 document.getElementById("closeModalBtn").addEventListener("click", () => {
   editModal.style.display = "none";
 });
 
-// 4. Handle Edit Form Submit (PATCH request)
 editForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const id = document.getElementById("editCampaignId").value;
 
-  // We only send the fields we want to update
   const updatedData = {
     deadline: document.getElementById("editDeadline").value,
     description: document.getElementById("editDescription").value,
@@ -122,7 +104,7 @@ editForm.addEventListener("submit", async function (event) {
     if (response.ok) {
       alert("Campaign updated successfully!");
       editModal.style.display = "none";
-      loadDashboardData(); // Refresh the list without reloading the whole page
+      loadDashboardData();
     }
   } catch (error) {
     console.error("Error updating campaign:", error);
@@ -130,5 +112,4 @@ editForm.addEventListener("submit", async function (event) {
   }
 });
 
-// Initialize
 loadDashboardData();

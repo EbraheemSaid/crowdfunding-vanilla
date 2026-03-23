@@ -31,14 +31,6 @@
           >Manage Campaigns</a
         >
       </div>
-
-      <button
-        id="logoutBtn"
-        class="btn"
-        style="margin-top: 40px; background: var(--danger-color)"
-      >
-        Logout
-      </button>
     </div>
 
     <script src="../scripts/config.js"></script>
@@ -47,9 +39,6 @@
       if (!currentUser || currentUser.role !== "admin") {
         window.location.href = "login.html";
       }
-      document
-        .getElementById("logoutBtn")
-        .addEventListener("click", logoutUser);
     </script>
   </body>
 </html>
