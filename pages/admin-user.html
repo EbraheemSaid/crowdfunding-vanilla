@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Users - Admin</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: white;
+        box-shadow: var(--shadow);
+      }
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+      }
+      th {
+        background-color: var(--text-main);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 40px">
+      <a
+        href="admin-dashboard.html"
+        class="btn"
+        style="
+          background: var(--text-muted);
+          margin-bottom: 20px;
+          display: inline-block;
+        "
+        >&larr; Back to Dashboard</a
+      >
+
+      <h2>Registered Users</h2>
+
+      <table id="usersTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="usersTableBody">
+          <tr>
+            <td colspan="6">Loading users...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/admin-user.js"></script>
+  </body>
+</html>
