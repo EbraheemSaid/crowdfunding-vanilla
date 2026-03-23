@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaign Details - Crowdfunding</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div class="container" style="max-width: 800px; margin-top: 50px">
+      <a
+        href="campaigns.html"
+        class="btn"
+        style="
+          background: var(--text-muted);
+          margin-bottom: 20px;
+          display: inline-block;
+        "
+        >&larr; Back to Campaigns</a
+      >
+
+      <div id="campaignDetailsContainer">
+        <p>Loading campaign details...</p>
+      </div>
+
+      <div
+        id="pledgeSection"
+        style="
+          display: none;
+          margin-top: 40px;
+          padding: 20px;
+          border: 1px solid var(--border-color);
+          border-radius: var(--radius);
+          background: white;
+        "
+      >
+        <h3>Support this Campaign</h3>
+        <form
+          id="pledgeForm"
+          style="display: flex; gap: 10px; margin-top: 15px"
+        >
+          <input
+            type="number"
+            id="pledgeAmount"
+            placeholder="Amount to pledge ($)"
+            required
+            min="1"
+            style="padding: 10px; flex-grow: 1"
+          />
+          <button type="submit" class="btn">Make Pledge</button>
+        </form>
+        <p
+          id="authMessage"
+          style="color: var(--danger-color); margin-top: 10px; display: none"
+        >
+          You must be logged in to make a pledge.
+        </p>
+      </div>
+    </div>
+
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/campaign-details.js"></script>
+  </body>
+</html>
