@@ -51,6 +51,12 @@
       "campaignId": "1",
       "userId": "1",
       "amount": 500
+    },
+    {
+      "id": "26e7",
+      "campaignId": "4fee",
+      "userId": "1",
+      "amount": 500
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
