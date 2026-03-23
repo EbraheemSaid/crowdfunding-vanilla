@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse Campaigns - Crowdfunding</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <style>
+      .campaign-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .card {
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 15px;
+        box-shadow: var(--shadow);
+        background: white;
+      }
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: var(--radius);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+        "
+      >
+        <h2>Explore Campaigns</h2>
+        <div style="display: flex; gap: 10px">
+          <a
+            href="login.html"
+            class="btn"
+            style="
+              background: white;
+              color: var(--text-main);
+              border: 1px solid var(--border-color);
+            "
+            >Login</a
+          >
+          <a href="register.html" class="btn">Sign Up</a>
+        </div>
+      </header>
+
+      <div style="margin-bottom: 20px; display: flex; gap: 10px">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search campaigns (e.g., watch)..."
+          style="
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+          "
+        />
+        <button id="searchBtn" class="btn">Search</button>
+      </div>
+
+      <div id="campaignsContainer" class="campaign-grid"></div>
+    </div>
+
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/campaigns.js"></script>
+  </body>
+</html>
