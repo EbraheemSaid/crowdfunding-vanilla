@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Launch Campaign - Crowdfunding</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div class="container" style="max-width: 600px; margin-top: 50px">
+      <h2>Launch a New Campaign</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px">
+        Fill out the details below. Note that an Admin must approve your
+        campaign before it goes live.
+      </p>
+
+      <form
+        id="campaignForm"
+        style="display: flex; flex-direction: column; gap: 15px"
+      >
+        <input
+          type="text"
+          id="title"
+          placeholder="Campaign Title"
+          required
+          style="padding: 10px"
+        />
+        <textarea
+          id="description"
+          placeholder="Campaign Description"
+          required
+          rows="4"
+          style="padding: 10px"
+        ></textarea>
+
+        <div style="display: flex; gap: 15px">
+          <input
+            type="number"
+            id="goal"
+            placeholder="Funding Goal ($)"
+            required
+            min="1"
+            style="padding: 10px; flex: 1"
+          />
+          <input
+            type="date"
+            id="deadline"
+            required
+            style="padding: 10px; flex: 1"
+          />
+        </div>
+
+        <label for="image" style="font-weight: bold; margin-top: 10px"
+          >Upload Campaign Image:</label
+        >
+        <input
+          type="file"
+          id="image"
+          accept="image/*"
+          required
+          style="padding: 10px; border: 1px solid var(--border-color)"
+        />
+
+        <button type="submit" class="btn" style="margin-top: 10px">
+          Submit Campaign
+        </button>
+      </form>
+    </div>
+
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/create-campaign.js"></script>
+  </body>
+</html>
