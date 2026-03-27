@@ -90,3 +90,38 @@ body {
 body {
   padding-top: 10px;
 }
+
+@media (max-width: 768px) {
+  .main-navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dashboard-split {
+    grid-template-columns: 1fr !important;
+  }
+
+  .form-row {
+    flex-direction: column !important;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    display: block;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+  }
+
+  table {
+    min-width: 600px;
+  }
+}

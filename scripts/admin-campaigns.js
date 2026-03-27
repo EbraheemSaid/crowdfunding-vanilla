@@ -1,6 +1,3 @@
-// admin-campaigns.js
-
-// 1. Strict Route Protection
 const currentUser = getAuthUser();
 if (!currentUser || currentUser.role !== "admin") {
   alert("Unauthorized access. Admins only.");
@@ -9,7 +6,6 @@ if (!currentUser || currentUser.role !== "admin") {
 
 const tableBody = document.getElementById("campaignsTableBody");
 
-// 2. Fetch and Render All Campaigns
 async function loadCampaigns() {
   try {
     const response = await fetch(`${API_URL}/campaigns`);
@@ -30,7 +26,6 @@ async function loadCampaigns() {
         ? "<span style='color: green; font-weight: bold;'>Approved</span>"
         : "<span style='color: orange; font-weight: bold;'>Pending/Rejected</span>";
 
-      // If approved, show Reject button. If not approved, show Approve button. Delete is always available.
       const toggleApprovalBtn = camp.isApproved
         ? `<button class="btn reject-btn" data-id="${camp.id}" style="background: #f39c12; padding: 5px 10px; font-size: 0.8em;">Reject</button>`
         : `<button class="btn approve-btn" data-id="${camp.id}" style="background: var(--primary-color); padding: 5px 10px; font-size: 0.8em;">Approve</button>`;
@@ -70,7 +65,6 @@ document.addEventListener("click", async function (event) {
     }
   }
 
-  // --- DELETE CAMPAIGN ---
   if (event.target.classList.contains("delete-btn")) {
     const id = event.target.getAttribute("data-id");
     if (
@@ -83,7 +77,6 @@ document.addEventListener("click", async function (event) {
   }
 });
 
-// Helper Function: Update Approval Status (PATCH)
 async function updateCampaignStatus(id, isApprovedStatus) {
   try {
     const response = await fetch(`${API_URL}/campaigns/${id}`, {

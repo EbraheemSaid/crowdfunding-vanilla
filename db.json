@@ -23,6 +23,22 @@
       "password": "password",
       "role": "user",
       "isActive": true
+    },
+    {
+      "id": "a05e",
+      "name": "Ebraheem",
+      "email": "ebraheemsaid7@microfast.com",
+      "password": "ضصثقفغ",
+      "role": "user",
+      "isActive": true
+    },
+    {
+      "id": "b2bc",
+      "name": "Ebraheem",
+      "email": "e@g.co",
+      "password": "qwert",
+      "role": "user",
+      "isActive": true
     }
   ],
   "campaigns": [
