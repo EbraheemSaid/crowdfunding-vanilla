@@ -23,7 +23,7 @@ async function fetchAndRenderCampaigns(searchQuery = "") {
       card.className = "card";
 
       card.innerHTML = `
-                <img src="${campaign.image || "https://via.placeholder.com/300x200?text=No+Image"}" alt="Campaign Image">
+                <img src="${campaign.image}" alt="Campaign Image">
                 <h3 style="margin-top: 10px;">${campaign.title}</h3>
                 <p style="color: var(--text-muted); font-size: 0.9em; margin-bottom: 10px;">
                     ${campaign.description.substring(0, 60)}...
